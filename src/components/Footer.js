@@ -25,7 +25,7 @@ const Footer = () => {
         </p>
         <p>
           <a
-            href='https://github.com/r1oga/dj-covid'
+            href='https://github.com/r1oga/js-calculator'
             target='_blank'
             rel='noopener noreferrer'
           >
