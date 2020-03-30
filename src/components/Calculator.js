@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Grid, Segment } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 import { create, all } from 'mathjs'
+import _ from 'lodash'
 
 import Display from './Display'
 import Button from './Button'
@@ -12,19 +13,27 @@ export default () => {
   const write = char => () => {
     const formula = document.getElementById('display')
     const l = formula.innerHTML.length
-    if (formula.innerHTML.slice(l - 1) === '0' && l === 1) {
+    const lastChar = formula.innerHTML.slice(l - 1)
+    if (lastChar === '0' && l === 1) {
       formula.innerHTML = char
       return
     }
+    /* case where 2 operators are entered consecutively:
+    keep only last operator
+    */
+    const chars = ['+', '*', '/']
+    // console.log('last char in chars', chars.includes(lastChar))
+    // console.log('pressed char in chars', chars.includes(lastChar))
+    if (chars.includes(lastChar) && chars.includes(char)) {
+      formula.innerHTML = formula.innerHTML.slice(0, l - 1) + char
+    }
+
+    formula.innerHTML = formula.innerHTML.replace('*-+', '+')
+
     const rgx = /\.[0-9-\+\*\\]?$/g
     if (!formula.innerHTML.match(rgx) || char !== '.') {
       formula.innerHTML += char
     }
-    // if (lastChar === '0' && formula.innerHTML.length === 1) {
-    //   formula.innerHTML = char
-    // } else if (char !== '.' || lastChar !== ('' || '+' || '-' || '*' || '/')) {
-    //   formula.innerHTML += char
-    // }
   }
 
   const calculate = () => {
