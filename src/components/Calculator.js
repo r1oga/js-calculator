@@ -11,11 +11,20 @@ const math = create(all)
 export default () => {
   const write = char => () => {
     const formula = document.getElementById('display')
-    if (formula.innerHTML === '0') {
+    const l = formula.innerHTML.length
+    if (formula.innerHTML.slice(l - 1) === '0' && l === 1) {
       formula.innerHTML = char
-    } else {
+      return
+    }
+    const rgx = /\.[0-9-\+\*\\]?$/g
+    if (!formula.innerHTML.match(rgx) || char !== '.') {
       formula.innerHTML += char
     }
+    // if (lastChar === '0' && formula.innerHTML.length === 1) {
+    //   formula.innerHTML = char
+    // } else if (char !== '.' || lastChar !== ('' || '+' || '-' || '*' || '/')) {
+    //   formula.innerHTML += char
+    // }
   }
 
   const calculate = () => {
