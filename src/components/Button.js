@@ -6,11 +6,15 @@ const Button = styled.button`
   border: none;
   color: white;
   cursor: default;
-  font-family: monospace;
+  font-family: 'Orbitron', 'monospace';
   font-size: 20px;
   height: 65px;
   outline: 1px solid black;
   width: 100%;
+
+  &:hover {
+    background-color: rgb(141, 145, 145);
+  }
   
 `
 
