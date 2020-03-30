@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAOA,kBACE,SACF,CAEA,MACE,eACF","file":"main.4d81d10c.chunk.css","sourcesContent":["/*  Override semantic ui styling with more specific selectors */\n\n/* Columns */\n#grid > * > * {\n  padding: 0;\n}\n/*  Rows */\n#grid > * {\n  padding: 0;\n}\n\n#grid {\n  padding-top: 2em;\n}\n"]}
