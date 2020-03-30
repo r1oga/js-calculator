@@ -1,0 +1,14 @@
+/*  Override semantic ui styling with more specific selectors */
+
+/* Columns */
+#grid > * > * {
+  padding: 0;
+}
+/*  Rows */
+#grid > * {
+  padding: 0;
+}
+
+#grid {
+  padding-top: 2em;
+}
