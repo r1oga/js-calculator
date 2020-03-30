@@ -25,8 +25,8 @@ const Output = styled.div`
 export default () => {
   return (
     <Container>
-      <Input>789-9+0=780</Input>
-      <Output>780</Output>
+      <Input id='formula'>789-9+0=780</Input>
+      <Output id='display'>780</Output>
     </Container>
   )
 }

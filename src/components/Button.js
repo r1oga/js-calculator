@@ -18,6 +18,6 @@ export default props => {
   }
   `
   return (
-    <Button id={props.id}>{props.char}</Button>
+    <Button id={props.id} onClick={props.action}>{props.char}</Button>
   )
 }
