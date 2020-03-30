@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = styled.button`
-  background: grey;
+export default props => {
+  const Button = styled.button`
+  background: ${props.color ? props.color : 'grey'};
   border: none;
   color: white;
   cursor: default;
@@ -11,17 +12,12 @@ const Button = styled.button`
   height: 65px;
   outline: 1px solid black;
   width: 100%;
-
-  &:hover {
-    background-color: rgb(141, 145, 145);
-  }
   
-`
-
-export default () => {
+  &:hover {
+    background-color: rgb(71, 88, 126);
+  }
+  `
   return (
-    <Button>
-      B
-    </Button>
+    <Button id={props.id}>{props.char}</Button>
   )
 }
